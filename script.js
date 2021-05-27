@@ -21,16 +21,16 @@ const btnNew = document.querySelector(`.btn--new`);
 const btnRoll = document.querySelector(`.btn--roll`);
 const btnHold = document.querySelector(`.btn--hold`);
 
-let kec = new Audio(`kec.m4a`);
-let audioVictory = new Audio(`victory.m4a`);
-let audioHold = new Audio(`hold.m4a`);
-let izvini = new Audio(`izvini6ka.m4a`);
+let kec = new Audio(`src/kec.m4a`);
+let audioVictory = new Audio(`src/victory.m4a`);
+let audioHold = new Audio(`src/hold.m4a`);
+let izvini = new Audio(`src/izvini6ka.m4a`);
 // Rolling dice functionality
 
 btnRoll.addEventListener(`click`, function () {
   const dice = Math.trunc(Math.random() * 6) + 1;
   diceEl.classList.remove(`hidden`);
-  diceEl.src = `dice-${dice}.png`;
+  diceEl.src = `src/dice-${dice}.png`;
   if (dice == 6) izvini.play();
   if (dice == 1) kec.play();
   if (dice !== 1) {
